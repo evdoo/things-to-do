@@ -1,8 +1,8 @@
 package evdoo.thingstodo.domain
 
-class RemoveThingUseCase {
+class RemoveThingUseCase(private val thingsRepository: ThingsRepository) {
 
     fun removeThing(thing: ThingItem) {
-
+        thingsRepository.removeThing(thing)
     }
 }

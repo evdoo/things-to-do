@@ -1,8 +1,6 @@
 package evdoo.thingstodo.domain
 
-class GetThingUseCase {
+class GetThingUseCase(private val thingsRepository: ThingsRepository) {
 
-    fun getThing(thingId: Int): ThingItem {
-        TODO()
-    }
+    fun getThing(thingId: Int): ThingItem = thingsRepository.getThing(thingId)
 }
