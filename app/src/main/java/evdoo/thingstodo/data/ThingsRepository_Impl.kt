@@ -25,8 +25,9 @@ object ThingsRepository_Impl: ThingsRepository {
 
     override fun editThing(thing: ThingItem) {
         val oldElement = getThing(thing.id)
-        thingsList.remove(oldElement)
-        addThing(thing)
+        val index = thingsList.indexOf(oldElement)
+        thingsList.add(index, thing)
+        updateList()
     }
 
     override fun getThingsList(): LiveData<List<ThingItem>> {
